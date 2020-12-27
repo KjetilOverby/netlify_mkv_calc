@@ -6,10 +6,7 @@ import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 
-export default function Index({ posts }) {
-  console.log('====================================');
-  console.log(posts);
-  console.log('====================================');
+export default function Index() {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -25,12 +22,12 @@ export default function Index({ posts }) {
     </Container>
   );
 }
-Index.getInitialProps = async () => {
-  const res = await fetch(
-    `https://agitated-yalow-4c36d7.netlify.app/api/createdPost/posts`
-  );
-  const data = await res.json();
-  return { posts: data };
-};
+// Index.getInitialProps = async () => {
+//   const res = await fetch(
+//     `https://agitated-yalow-4c36d7.netlify.app/api/createdPost/posts`
+//   );
+//   const data = await res.json();
+//   return { posts: data };
+// };
 
 // http://localhost:3000
