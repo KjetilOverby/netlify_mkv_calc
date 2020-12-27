@@ -6,7 +6,10 @@ import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 
-export default function Index({ stars }) {
+export default function Index({ posts }) {
+  console.log('====================================');
+  console.log(posts);
+  console.log('====================================');
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -15,7 +18,6 @@ export default function Index({ stars }) {
         </Typography>
         <Link href="/about" color="secondary">
           Go to the about page
-          {stars.id}
         </Link>
         <ProTip />
         <Copyright />
@@ -23,8 +25,12 @@ export default function Index({ stars }) {
     </Container>
   );
 }
-Index.getInitialProps = async (ctx) => {
-  const res = await fetch('https://api.github.com/repos/vercel/next.js');
-  const stars = await res.json();
-  return { stars };
+Index.getInitialProps = async () => {
+  const res = await fetch(
+    `https://agitated-yalow-4c36d7.netlify.app:3000/api/createdPost/posts`
+  );
+  const data = await res.json();
+  return { posts: data };
 };
+
+// http://localhost
