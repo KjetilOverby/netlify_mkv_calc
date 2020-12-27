@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
+import axios from 'axios';
 
 export default function Index() {
+  const [post, setPost] = useState();
+
+  const api = axios.create({
+    baseURL: 'http://localhost:9000',
+    //http://10.0.0.1:9000/sawblades/
+    //http://localhost:9000/sawblades
+    //https://database-sawblades.ktl.vercel.app/sawblades
+    //https://node-sagbladergister-ktl-k25yxmgrp.vercel.app/sawblades
+  });
+
+  useEffect(async () => {
+    try {
+      await api.get('/posts', {}).then((res) => {
+        setPost(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -14,7 +35,10 @@ export default function Index() {
           Next.js example
         </Typography>
         <Link href="/about" color="secondary">
-          Go to the about page
+          {post &&
+            post.map((item) => {
+              return <Typography>{item.header}</Typography>;
+            })}
         </Link>
         <ProTip />
         <Copyright />
