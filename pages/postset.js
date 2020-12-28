@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({}));
 const postset = ({ post }) => {
   const classes = useStyles();
 
-  return <div>{post.header}</div>;
+  return <div>{post && <h1>{post.header}</h1>}</div>;
 };
 
 export default postset;
