@@ -66,11 +66,11 @@ const PostSet = ({ post, postID }) => {
 
   return (
     <>
-      {postID && post && (
+      {post && (
         <Typography className={classes.header}>{post.header}</Typography>
       )}
 
-      {postID && post && (
+      {post && (
         <>
           <div className={classes.postContainer}>
             <Hylse post={post} />
