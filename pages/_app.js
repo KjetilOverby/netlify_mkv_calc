@@ -33,8 +33,8 @@ export default function MyApp(props) {
     }
   }, []);
 
-  useEffect(() => {
-    api
+  useEffect(async () => {
+    await api
       .get(`/${postID}`)
       .then((res) => {
         setPost(res.data);
@@ -62,6 +62,7 @@ export default function MyApp(props) {
           {...pageProps}
           posts={posts}
           setPostID={setPostID}
+          postID={postID}
           post={post}
         />
       </ThemeProvider>

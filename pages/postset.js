@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '1rem',
   },
 }));
-const PostSet = ({ post }) => {
+const PostSet = ({ post, postID }) => {
   const classes = useStyles();
   const router = useRouter();
   // const firstBladeValueTop = props.post.sagsnitt
@@ -66,29 +66,30 @@ const PostSet = ({ post }) => {
 
   return (
     <>
-      {post && (
+      {postID && post && (
         <Typography className={classes.header}>{post.header}</Typography>
       )}
 
-      {post && (
-        <div className={classes.postContainer}>
-          <Hylse post={post} />
-          <Hidden smDown>
-            <div className={classes.buttonContainer} container>
-              <Link href="/">
-                <Button className={classes.backBtn} variant="contained">
-                  Tilbake
-                </Button>
-              </Link>
-            </div>
+      {postID && post && (
+        <>
+          <div className={classes.postContainer}>
+            <Hylse post={post} />
+            <Hidden smDown>
+              <div className={classes.buttonContainer} container>
+                <Link href="/">
+                  <Button className={classes.backBtn} variant="contained">
+                    Tilbake
+                  </Button>
+                </Link>
+              </div>
+            </Hidden>
+          </div>
+          <Hidden only="sm">
+            <Info post={post} />
+            My account // user here
           </Hidden>
-        </div>
+        </>
       )}
-
-      <Hidden only="sm">
-        <Info post={post} />
-        My account // user here
-      </Hidden>
     </>
   );
 };
