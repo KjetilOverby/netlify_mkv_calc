@@ -9,7 +9,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import { Button, Hidden } from '@material-ui/core';
 import Link from 'next/link';
-//import DrawerComponent from './DrawerComponent';
+import DrawerComponent from './DrawerComponent';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import LockIcon from '@material-ui/icons/Lock';
 import theme from '../src/theme';
@@ -113,7 +113,9 @@ export default function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Hidden mdUp>{/* <DrawerComponent user={props.user} /> */}</Hidden>
+          <Hidden mdUp>
+            <DrawerComponent user={props.user} />
+          </Hidden>
           <IconButton
             edge="start"
             className={classes.menuButton}
