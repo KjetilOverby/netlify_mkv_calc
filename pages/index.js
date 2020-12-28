@@ -6,21 +6,18 @@ import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import axios from 'axios';
+//require('dotenv').config();
 
 export default function Index() {
   const [post, setPost] = useState();
 
   const api = axios.create({
-    baseURL: 'http://localhost:9000',
-    //http://10.0.0.1:9000/sawblades/
-    //http://localhost:9000/sawblades
-    //https://database-sawblades.ktl.vercel.app/sawblades
-    //https://node-sagbladergister-ktl-k25yxmgrp.vercel.app/sawblades
+    baseURL: process.env.API_URL,
   });
 
   useEffect(async () => {
     try {
-      await api.get('/posts', {}).then((res) => {
+      await api.get('/', {}).then((res) => {
         setPost(res.data);
       });
     } catch (error) {

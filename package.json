@@ -11,10 +11,12 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.11.8",
+    "netlify-lambda": "^2.0.2",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "serverless-http": "^2.6.0"
   },
   "scripts": {
     "dev": "next",
