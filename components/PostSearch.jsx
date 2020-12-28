@@ -146,57 +146,61 @@ const PostSearch = ({ posts, user, setPostID }) => {
 
   return (
     <>
-      <Header getSearch={getSearch} user={user} />
+      {posts && (
+        <>
+          <Header getSearch={getSearch} user={user} />
 
-      <Grid container className={classes.mainContainer}>
-        <Grid item className={classes.searchContainerWrapper}>
-          <Grid container className={classes.searchContainer}>
-            <Grid item>
-              <Grid className={classes.infoContainer} item>
-                <Typography className={classes.info}>
-                  Antall poster: {posts.length}
-                </Typography>
-                <Typography className={classes.info}>
-                  Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
-                  {searchInput && search.length != 0 && (
-                    <span style={{ color: ' #333' }}>{search.length}</span>
-                  )}{' '}
-                  {search.length === 0 && (
-                    <span style={{ color: 'indianred' }}>Ingen treff</span>
-                  )}
-                </Typography>
+          <Grid container className={classes.mainContainer}>
+            <Grid item className={classes.searchContainerWrapper}>
+              <Grid container className={classes.searchContainer}>
+                <Grid item>
+                  <Grid className={classes.infoContainer} item>
+                    <Typography className={classes.info}>
+                      Antall poster: {posts.length}
+                    </Typography>
+                    <Typography className={classes.info}>
+                      Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
+                      {searchInput && search.length != 0 && (
+                        <span style={{ color: ' #333' }}>{search.length}</span>
+                      )}{' '}
+                      {search.length === 0 && (
+                        <span style={{ color: 'indianred' }}>Ingen treff</span>
+                      )}
+                    </Typography>
+                  </Grid>
+                </Grid>
+                <Grid item></Grid>
               </Grid>
             </Grid>
-            <Grid item></Grid>
-          </Grid>
-        </Grid>
 
-        <Grid item>
-          <div className={classes.postSearchContainer}>
-            <div className={classes.headerWrapper}>
-              <Typography className={classes.postHeader} variant="h4">
-                MKV poster
-              </Typography>
-            </div>
-            {search.map((post) => {
-              const getID = post._id;
-              const getIdHandler = () => {
-                setPostID(getID);
-              };
-              return (
-                <Link href={`/postset`}>
-                  <div
-                    className={classes.myButtonContainer}
-                    onClick={getIdHandler}
-                  >
-                    <MyButton header={post.header} />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </Grid>
-      </Grid>
+            <Grid item>
+              <div className={classes.postSearchContainer}>
+                <div className={classes.headerWrapper}>
+                  <Typography className={classes.postHeader} variant="h4">
+                    MKV poster
+                  </Typography>
+                </div>
+                {search.map((post) => {
+                  const getID = post._id;
+                  const getIdHandler = () => {
+                    setPostID(getID);
+                  };
+                  return (
+                    <Link href={`/postset`}>
+                      <div
+                        className={classes.myButtonContainer}
+                        onClick={getIdHandler}
+                      >
+                        <MyButton header={post.header} />
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </Grid>
+          </Grid>
+        </>
+      )}
       {/*  <Footer user={user} /> */}
     </>
   );

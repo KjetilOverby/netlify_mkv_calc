@@ -43,7 +43,9 @@ export default function MyApp(props) {
         console.log(e);
       });
   }, [postID]);
-
+  console.log('====================================');
+  console.log(postID);
+  console.log('====================================');
   return (
     <React.Fragment>
       <Head>
