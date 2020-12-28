@@ -6,10 +6,10 @@ import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
 import axios from 'axios';
-//require('dotenv').config();
+import PostSearch from '../components/PostSearch';
 
 export default function Index() {
-  const [post, setPost] = useState();
+  const [posts, setPosts] = useState();
 
   const api = axios.create({
     baseURL: process.env.API_URL,
@@ -18,37 +18,12 @@ export default function Index() {
   useEffect(async () => {
     try {
       await api.get('/', {}).then((res) => {
-        setPost(res.data);
+        setPosts(res.data);
       });
     } catch (error) {
       console.log(error);
     }
   }, []);
 
-  return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
-        <Link href="/about" color="secondary">
-          {post &&
-            post.map((item) => {
-              return <Typography>{item.header}</Typography>;
-            })}
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
-  );
+  return <div>{posts && <PostSearch posts={posts} />}</div>;
 }
-// Index.getInitialProps = async () => {
-//   const res = await fetch(
-//     `https://agitated-yalow-4c36d7.netlify.app/api/createdPost/posts`
-//   );
-//   const data = await res.json();
-//   return { posts: data };
-// };
-
-// http://localhost:3000
