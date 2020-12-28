@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '-10rem 4rem 0 -5rem',
   },
 }));
-const PostSearch = ({ posts, user }) => {
+const PostSearch = ({ posts, user, setPostID }) => {
   const classes = useStyles();
 
   const [searchInput, setSearchInput] = useState('');
@@ -179,9 +179,16 @@ const PostSearch = ({ posts, user }) => {
               </Typography>
             </div>
             {search.map((post) => {
+              const getID = post._id;
+              const getIdHandler = () => {
+                setPostID(getID);
+              };
               return (
-                <Link href={`/post_id/${post._id}`}>
-                  <div className={classes.myButtonContainer}>
+                <Link href={`/postset`}>
+                  <div
+                    className={classes.myButtonContainer}
+                    onClick={getIdHandler}
+                  >
                     <MyButton header={post.header} />
                   </div>
                 </Link>
