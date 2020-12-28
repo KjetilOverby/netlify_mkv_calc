@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import Link from 'next/link';
 import MyButton from './MyButton';
-// import Header from './Header';
+import Header from './Header';
 // import Footer from './Footer';
 import theme from '../src/theme';
 const useStyles = makeStyles((theme) => ({
@@ -146,7 +146,7 @@ const PostSearch = ({ posts, user }) => {
 
   return (
     <>
-      {/*  <Header getSearch={getSearch} user={user} /> */}
+      <Header getSearch={getSearch} user={user} />
 
       <Grid container className={classes.mainContainer}>
         <Grid item className={classes.searchContainerWrapper}>
@@ -156,17 +156,15 @@ const PostSearch = ({ posts, user }) => {
                 <Typography className={classes.info}>
                   Antall poster: {posts.length}
                 </Typography>
-                {/*     <Typography className={classes.info}>
+                <Typography className={classes.info}>
                   Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
                   {searchInput && search.length != 0 && (
-                    <span style={{ color: theme.palette.text.main }}>
-                      {search.length}
-                    </span>
+                    <span style={{ color: ' #333' }}>{search.length}</span>
                   )}{' '}
                   {search.length === 0 && (
                     <span style={{ color: 'indianred' }}>Ingen treff</span>
                   )}
-                </Typography> */}
+                </Typography>
               </Grid>
             </Grid>
             <Grid item></Grid>

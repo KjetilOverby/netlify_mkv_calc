@@ -8,9 +8,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '30px',
     marginBottom: '2rem',
     cursor: 'pointer',
-    //border: ` 2px solid ${theme.palette.text.main}`,
+    border: ` 2px solid #b6953c`,
     transition: 'background 0.3s, color 0.9s',
-    // background: `linear-gradient(120deg, ${theme.palette.button.main} 50%, ${theme.palette.text.main} 50%)`,
+    background: `linear-gradient(120deg, #b96868} 50%, #eee} 50%)`,
     backgroundSize: '220%',
     '&:hover': {
       backgroundPosition: '100%',
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    //color: theme.palette.text.main,
+    color: '#453cc5',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textShadow: '5px 5px 10px rgba(0,0,0,.3)',
