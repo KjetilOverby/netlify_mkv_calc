@@ -315,98 +315,100 @@ const Hylse = ({ post }) => {
   const classes = useStyles();
   return (
     <>
-      <div className={classes.background}>
-        <div className={classes.hylseContainer}>
-          <div className={`hylse ${classes.hylse}`}>
-            <div className={classes.ringContainer}>
-              {post.startRings.map((ring) => {
-                return (
-                  <div>
-                    <FillRings fillRingVal={ring.input} />
-                  </div>
-                );
-              })}
+      {post && (
+        <div className={classes.background}>
+          <div className={classes.hylseContainer}>
+            <div className={`hylse ${classes.hylse}`}>
+              <div className={classes.ringContainer}>
+                {post.startRings.map((ring) => {
+                  return (
+                    <div>
+                      <FillRings fillRingVal={ring.input} />
+                    </div>
+                  );
+                })}
 
-              <div className={classes.blade}>
-                <span className={classes.content}>Content</span>
-                <Typography className={classes.bladeTop}>
-                  {(post.blades.bladStamme + 1.4).toFixed(1)}
-                </Typography>
-                <Typography className={classes.bladeBottom}>
-                  {post.blades.bladStamme.toFixed(1)}
-                </Typography>
+                <div className={classes.blade}>
+                  <span className={classes.content}>Content</span>
+                  <Typography className={classes.bladeTop}>
+                    {(post.blades.bladStamme + 1.4).toFixed(1)}
+                  </Typography>
+                  <Typography className={classes.bladeBottom}>
+                    {post.blades.bladStamme.toFixed(1)}
+                  </Typography>
+                </div>
+
+                {post.rawInput.map((rawIn) => {
+                  return (
+                    <div>
+                      <RawRings
+                        rawVal={rawIn.input}
+                        ringVal={rawIn.ring}
+                        shimVal={rawIn.shims}
+                        shimsVal2={rawIn.shims2}
+                        shimsVal3={rawIn.shims3}
+                        postInfo={post}
+                      />
+                    </div>
+                  );
+                })}
+
+                {post.endRings.map((ring) => {
+                  return (
+                    <div>
+                      <FillRings fillRingVal={ring.input} />
+                    </div>
+                  );
+                })}
               </div>
 
-              {post.rawInput.map((rawIn) => {
-                return (
-                  <div>
-                    <RawRings
-                      rawVal={rawIn.input}
-                      ringVal={rawIn.ring}
-                      shimVal={rawIn.shims}
-                      shimsVal2={rawIn.shims2}
-                      shimsVal3={rawIn.shims3}
-                      postInfo={post}
-                    />
+              <div className={`hylse-start ${classes.hylseStart}`}>
+                <div className={classes.kileSpor}></div>
+              </div>
+              <div className={classes.hylseKile}>
+                <div className={classes.hylseScrewHole}>
+                  <div className={classes.screwHead1}>
+                    <div className={classes.screwHead2}></div>
                   </div>
-                );
-              })}
-
-              {post.endRings.map((ring) => {
-                return (
-                  <div>
-                    <FillRings fillRingVal={ring.input} />
+                </div>
+                <div className={classes.hylseScrewHole}>
+                  <div className={classes.screwHead1}>
+                    <div className={classes.screwHead2}></div>
                   </div>
-                );
-              })}
-            </div>
-
-            <div className={`hylse-start ${classes.hylseStart}`}>
-              <div className={classes.kileSpor}></div>
-            </div>
-            <div className={classes.hylseKile}>
-              <div className={classes.hylseScrewHole}>
-                <div className={classes.screwHead1}>
-                  <div className={classes.screwHead2}></div>
+                </div>
+                <div className={classes.hylseScrewHole}>
+                  <div className={classes.screwHead1}>
+                    <div className={classes.screwHead2}></div>
+                  </div>
                 </div>
               </div>
-              <div className={classes.hylseScrewHole}>
-                <div className={classes.screwHead1}>
-                  <div className={classes.screwHead2}></div>
-                </div>
+              <div className={classes.hylseEnd}>
+                <div className={classes.kileSporGangs}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <div className={classes.gang}></div>
+                <Hidden smDown>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                  <div className={classes.gang}></div>
+                </Hidden>
               </div>
-              <div className={classes.hylseScrewHole}>
-                <div className={classes.screwHead1}>
-                  <div className={classes.screwHead2}></div>
-                </div>
-              </div>
-            </div>
-            <div className={classes.hylseEnd}>
-              <div className={classes.kileSporGangs}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <div className={classes.gang}></div>
-              <Hidden smDown>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-                <div className={classes.gang}></div>
-              </Hidden>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
