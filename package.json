@@ -10,6 +10,7 @@
     "clsx": "latest",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "formik": "^2.2.6",
     "fs": "0.0.1-security",
     "mongoose": "^5.11.8",
     "netlify-lambda": "^2.0.2",
