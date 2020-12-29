@@ -25,10 +25,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     display: 'none',
-    fontFamily: 'Jacques Francois Shadow, cursive',
     fontSize: '1.6rem',
-    color: '#ff652f',
+    color: '#9e9e9d',
     padding: '0 1rem',
+    fontFamily: 'Special Elite, cursive',
+    fontWeight: 'bold',
     /* fontFamily: 'Yeseva One, cursive',
     fontFamily: 'Kumar One, cursive', */
     [theme.breakpoints.up('sm')]: {
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    background: '#747474',
+    background: '#3f3f3f',
   },
   newBtn: {
     marginRight: '30vw',

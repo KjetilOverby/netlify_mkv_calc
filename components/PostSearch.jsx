@@ -11,7 +11,7 @@ import {
 import Link from 'next/link';
 import MyButton from './MyButton';
 import Header from './Header';
-// import Footer from './Footer';
+import Footer from './Footer';
 import theme from '../src/theme';
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: '2.5rem',
     flexDirection: 'column',
-    background: `linear-gradient(rgba(6, 37, 61, .95), rgba(0, 0, 0, .8)) , url("https://images.unsplash.com/photo-1548604130-5db6fcf5fc13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80")`,
+    background: `linear-gradient(#314d4d, rgba(0, 0, 0, .8)) , url("https://images.unsplash.com/photo-1564985275293-ef002b57fd0c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80")`,
     width: '50vw',
     backgroundSize: 'cover',
     backgroundPosition: '60%',
@@ -202,7 +202,7 @@ const PostSearch = ({ posts, user, setPostID }) => {
           </Grid>
         </>
       )}
-      {/*  <Footer user={user} /> */}
+      <Footer user={user} />
     </>
   );
 };
