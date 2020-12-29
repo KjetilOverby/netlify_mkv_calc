@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     fontFamily: 'Jacques Francois Shadow, cursive',
     fontSize: '1.6rem',
-    //color: theme.palette.headerTitle.main,
-    textShadow: '1px 1px 10px white',
+    color: '#ff652f',
     padding: '0 1rem',
     /* fontFamily: 'Yeseva One, cursive',
     fontFamily: 'Kumar One, cursive', */
@@ -40,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     marginRight: '2vw',
     borderRadius: theme.shape.borderRadius,
-    //backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
-      //backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -77,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    // background: theme.palette.header.main,
+    background: '#747474',
   },
   newBtn: {
     marginRight: '30vw',

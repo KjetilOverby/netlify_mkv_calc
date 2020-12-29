@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '2rem',
     alignItems: 'center',
     minHeight: '100vh',
-    //background: theme.palette.background.main,
+    background: '#272727',
 
     [theme.breakpoints.down('md')]: {
       alignItems: 'center',
@@ -54,17 +54,16 @@ const useStyles = makeStyles((theme) => ({
   searchContainerWrapper: {
     [theme.breakpoints.up('md')]: {
       flexGrow: 1,
-      //background: theme.palette.leftBackground.main,
+      background: '#fff',
     },
     [theme.breakpoints.down('sm')]: {},
   },
-  //
-  // https://images.unsplash.com/photo-1547518717-52a1971c2c96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1833&q=80
+
   searchContainer: {
     flexGrow: 1,
     padding: '2.5rem',
     flexDirection: 'column',
-    background: `linear-gradient(rgba(6, 37, 61, .95), rgba(0, 0, 0, .8)) , url("https://images.unsplash.com/photo-1522609163202-be0734d421e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60")`,
+    background: `linear-gradient(rgba(6, 37, 61, .95), rgba(0, 0, 0, .8)) , url("https://images.unsplash.com/photo-1548604130-5db6fcf5fc13?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80")`,
     width: '50vw',
     backgroundSize: 'cover',
     backgroundPosition: '60%',
@@ -106,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   info: {
-    //color: theme.palette.textLeft.main,
+    color: '#fff',
     fontFamily: 'Special Elite, cursive',
     [theme.breakpoints.up('lg')]: {
       fontSize: '2.5rem',
@@ -124,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
   },
   postHeader: {
     margin: '2rem 0',
-    //color: theme.palette.text.main,
+    color: '#ffe400',
     fontFamily: 'Special Elite, cursive',
     fontSize: '1.8rem',
   },
@@ -161,7 +160,9 @@ const PostSearch = ({ posts, user, setPostID }) => {
                     <Typography className={classes.info}>
                       Søkeresultat: {!searchInput && ' Ingen søk'}{' '}
                       {searchInput && search.length != 0 && (
-                        <span style={{ color: ' #333' }}>{search.length}</span>
+                        <span style={{ color: ' #e0932d' }}>
+                          {search.length}
+                        </span>
                       )}{' '}
                       {search.length === 0 && (
                         <span style={{ color: 'indianred' }}>Ingen treff</span>

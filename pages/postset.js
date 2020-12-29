@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     top: '5%',
     left: '5%',
+    color: '#6eb2d1',
+    fontWeight: 'bold',
   },
   postContainer: {
     height: '100vh',
@@ -34,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    background: 'linear-gradient(#3a4f55, #eee)',
     [theme.breakpoints.down('xs')]: {
       height: '40vh',
     },
