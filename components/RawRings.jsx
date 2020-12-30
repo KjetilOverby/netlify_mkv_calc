@@ -26,14 +26,15 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('md')]: {
       height: '7rem',
-      width: '2.6rem',
+      width: '2.8rem',
       background:
         'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(36,149,126,1) 35%, rgba(0,255,229,1) 100%)',
     },
     [theme.breakpoints.down('xs')]: {
       height: '4rem',
-      width: '1.5rem',
+      width: '1.7rem',
       margin: '0 .05rem',
+      borderRadius: '1px',
     },
   },
   rawVal: {

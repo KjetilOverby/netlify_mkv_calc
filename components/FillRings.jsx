@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       background:
         'linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
       height: '7rem',
-      width: '2.6rem',
+      width: '2.8rem',
       margin: '0 .2rem',
     },
     [theme.breakpoints.down('sm')]: {
@@ -35,8 +35,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       height: '4rem',
-      width: '1.5rem',
+      width: '1.7rem',
       margin: '0 0.05rem',
+      borderRadius: '1px',
     },
   },
 

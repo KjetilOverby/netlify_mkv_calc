@@ -40,15 +40,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     zIndex: '200',
     width: '70vw',
+
     [theme.breakpoints.down('xl')]: {
-      marginLeft: '5.5rem',
+      marginLeft: '4.7rem',
     },
     [theme.breakpoints.down('lg')]: {
       marginLeft: '4.3rem',
     },
 
     [theme.breakpoints.down('md')]: {
-      margin: '0 0 0 3.5em',
+      margin: '0 0 0 3.0em',
     },
     [theme.breakpoints.down('sm')]: {
       margin: '0 2.5rem',
@@ -66,19 +67,19 @@ const useStyles = makeStyles((theme) => ({
     zIndex: -2,
     boxShadow: '1px 1px 20px black',
     [theme.breakpoints.down('xl')]: {
-      width: '80rem',
+      width: '69rem',
     },
     [theme.breakpoints.down('lg')]: {
-      width: '65rem',
+      width: '64rem',
       height: '9rem',
     },
 
     [theme.breakpoints.down('md')]: {
-      width: '65vw',
+      width: '38rem',
       height: '5rem',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '75vw',
+      width: '38rem',
     },
     [theme.breakpoints.down('xs')]: {
       width: '20.5rem',
